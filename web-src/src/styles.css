@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: rgb(249 250 251);
+    color: rgb(17 24 39);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  p {
+    line-height: 1.625;
+  }
+}
+
+@layer components {
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition-property: background-color;
+    transition-duration: 200ms;
+    cursor: pointer;
+    outline: none;
+    ring: 2px;
+    ring-offset: 2px;
+  }
+
+  .btn-primary {
+    background-color: #2563eb;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #1d4ed8;
+  }
+
+  .btn-secondary {
+    background-color: #7c3aed;
+    color: white;
+  }
+
+  .btn-secondary:hover {
+    background-color: #6d28d9;
+  }
+
+  .btn-outline {
+    border: 2px solid rgb(209 213 219);
+    background-color: white;
+    color: rgb(17 24 39);
+  }
+
+  .btn-outline:hover {
+    border-color: rgb(191 199 212);
+    background-color: rgb(249 250 251);
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(229 231 235);
+    padding: 1.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition-property: box-shadow;
+    transition-duration: 200ms;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgb(209 213 219);
+    border-radius: 0.5rem;
+    background-color: white;
+    color: rgb(17 24 39);
+    transition-property: all;
+    transition-duration: 200ms;
+  }
+
+  .input-field::placeholder {
+    color: rgb(156 163 175);
+  }
+
+  .input-field:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #2563eb;
+    border-color: transparent;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(17 24 39);
+    margin-bottom: 1rem;
+  }
+
+  .panel {
+    background-color: white;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+}

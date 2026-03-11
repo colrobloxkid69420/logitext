@@ -1,0 +1,251 @@
+LOGITEXT WEB SKELETON - COMPLETE DIRECTORY STRUCTURE
+=====================================================
+
+web-src/
+│
+├── src/                                    # Source code
+│   ├── App.svelte                         # Root component with layout
+│   ├── main.ts                            # Application entry point
+│   ├── styles.css                         # Global styles & Tailwind
+│   │
+│   ├── components/                        # Reusable components
+│   │   ├── Router.svelte                 # Client-side routing
+│   │   │
+│   │   ├── layout/                       # Layout components
+│   │   │   ├── Header.svelte            # Top navigation bar
+│   │   │   ├── Sidebar.svelte           # Left sidebar with nav
+│   │   │   └── Footer.svelte            # Bottom footer
+│   │   │
+│   │   └── ui/                           # UI component library
+│   │       ├── Button.svelte            # Buttons (4 variants)
+│   │       ├── Card.svelte              # Card containers
+│   │       ├── Input.svelte             # Form inputs
+│   │       ├── Modal.svelte             # Modal dialogs
+│   │       ├── Tabs.svelte              # Tab navigation
+│   │       └── Alert.svelte             # Alert messages
+│   │
+│   ├── pages/                             # Page components (5)
+│   │   ├── Dashboard.svelte             # Home/overview page
+│   │   ├── Editor.svelte                # Proof editor workspace
+│   │   ├── Projects.svelte              # Project management
+│   │   ├── Settings.svelte              # User settings
+│   │   └── Help.svelte                  # Help/documentation
+│   │
+│   ├── types/                            # TypeScript types
+│   │   └── index.ts                     # Type definitions
+│   │
+│   ├── lib/                              # Utilities (placeholder)
+│   │
+│   └── assets/                           # Static assets
+│       ├── icons/                        # Icon files
+│       └── images/                       # Image files
+│
+├── dist/                                  # Production build (generated)
+│   ├── index.html
+│   └── assets/
+│       ├── index-*.css
+│       └── index-*.js
+│
+├── node_modules/                          # Dependencies (installed)
+│
+├── Configuration Files
+│   ├── index.html                        # HTML entry point
+│   ├── vite.config.ts                   # Vite configuration
+│   ├── tailwind.config.js               # Tailwind theme config
+│   ├── postcss.config.js                # PostCSS setup
+│   ├── tsconfig.json                    # TypeScript config
+│   ├── package.json                     # npm dependencies
+│   └── .gitignore                       # Git ignore rules
+│
+├── Environment Files
+│   ├── .env.example                     # Example env variables
+│   └── .env (create locally)            # Local environment vars
+│
+└── Documentation Files
+    ├── README.md                         # Main documentation
+    ├── SKELETON_GUIDE.md                # Quick reference guide
+    ├── PROJECT_SUMMARY.txt              # Project overview
+    └── DIRECTORY_STRUCTURE.txt          # This file
+
+COMPONENTS SUMMARY
+==================
+
+LAYOUT COMPONENTS (3)
+  Header.svelte          → Responsive header with logo + user menu
+  Sidebar.svelte         → Collapsible sidebar with navigation
+  Footer.svelte          → Footer with links and copyright
+
+UI COMPONENTS (6)
+  Button.svelte          → Primary, secondary, outline, danger variants
+  Card.svelte            → Reusable card container with title
+  Input.svelte           → Form input with label and error support
+  Modal.svelte           → Modal dialog with backdrop
+  Tabs.svelte            → Tab navigation component
+  Alert.svelte           → Status alerts (info, success, warning, error)
+
+PAGE COMPONENTS (5)
+  Dashboard.svelte       → Overview with cards and statistics
+  Editor.svelte          → Main editor with 4 sub-panels
+                          - Proof canvas
+                          - Proof steps
+                          - Available rules
+                          - Console output
+  Projects.svelte        → Project/proof management with table
+  Settings.svelte        → User account and preferences
+  Help.svelte            → Documentation and FAQs
+
+ROUTING STRUCTURE
+================
+
+Hash-based routing implemented in Router.svelte
+
+Routes:
+  /                      → Dashboard (default)
+  #dashboard            → Dashboard page
+  #editor               → Proof Editor
+  #projects             → Projects & Proofs
+  #settings             → Settings page
+  #help                 → Help & Documentation
+
+STYLING SYSTEM
+==============
+
+Tailwind CSS v4 with custom configuration
+
+Color Palette:
+  Primary:   #2563eb (Blue)
+  Secondary: #7c3aed (Purple)
+  Accent:    #06b6d4 (Cyan)
+  Success:   #10b981 (Green)
+  Warning:   #f59e0b (Amber)
+  Error:     #ef4444 (Red)
+
+Neutral Scale: 50-900 (Light to Dark)
+
+Spacing: 8px base unit (xs, sm, md, lg, xl, 2xl)
+Typography: 4 heading levels + body text
+
+TYPESCRIPT TYPES
+================
+
+Sequent
+  id: string
+  antecedent: string[]
+  consequent: string[]
+
+ProofStep
+  id: string
+  rule: string
+  sequent: Sequent
+  description: string
+
+Proof
+  id: string
+  title: string
+  description: string
+  steps: ProofStep[]
+  createdAt: Date
+  updatedAt: Date
+  status: 'in-progress' | 'completed' | 'abandoned'
+
+Project
+  id: string
+  title: string
+  description: string
+  proofs: Proof[]
+  createdAt: Date
+  updatedAt: Date
+
+User
+  id: string
+  email: string
+  name: string
+  createdAt: Date
+
+BUILD OUTPUT
+============
+
+Production bundle location: dist/
+  index.html              0.51 kB
+  index-*.css            18.14 kB (gzip: 4.27 kB)
+  index-*.js             50.94 kB (gzip: 18.20 kB)
+
+Development server: localhost:5173
+
+KEY FILES BY PURPOSE
+====================
+
+MAIN ENTRY POINTS
+  src/main.ts            Initialize app
+  index.html             HTML template
+
+STYLING
+  src/styles.css         Global Tailwind styles
+  tailwind.config.js     Theme & colors
+  postcss.config.js      CSS processing
+
+CONFIGURATION
+  vite.config.ts         Build configuration
+  tsconfig.json          TypeScript settings
+  package.json           Dependencies
+
+TYPES & INTERFACES
+  src/types/index.ts     Type definitions
+
+COMPONENTS
+  src/components/*       All components
+
+PAGES
+  src/pages/*            Page templates
+
+GIT & ENVIRONMENT
+  .gitignore             Git ignore rules
+  .env.example           Environment template
+
+DOCUMENTATION
+  README.md              Full documentation
+  SKELETON_GUIDE.md      Quick start guide
+  PROJECT_SUMMARY.txt    Project overview
+
+QUICK COMMANDS
+==============
+
+npm install              Install dependencies
+npm run dev              Start dev server (hot reload)
+npm run build            Build for production
+npm run preview          Preview production build
+
+DEVELOPMENT TIPS
+================
+
+1. Path Aliases (tsconfig.json + vite.config.ts):
+   $components/*  → src/components/*
+   $pages/*       → src/pages/*
+   $lib/*         → src/lib/*
+   $types/*       → src/types/*
+
+2. All pages accessible from Sidebar navigation
+
+3. Components use Svelte's reactive declarations (<script>)
+
+4. Tailwind utilities can be used directly in templates
+
+5. TypeScript strict mode enabled for type safety
+
+6. Responsive design with mobile-first approach
+
+7. No backend logic - ready for API integration
+
+NEXT STEPS
+==========
+
+1. Customize colors and branding in tailwind.config.js
+2. Implement proof editor logic in Editor.svelte
+3. Add proof visualization (d3.js or similar)
+4. Create lib/ utility functions for backend API
+5. Add Svelte stores for state management
+6. Connect to backend/database (Supabase recommended)
+7. Implement keyboard shortcuts
+8. Add proof export functionality
+
+The skeleton is complete and ready for development!
